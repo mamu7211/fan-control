@@ -32,3 +32,15 @@ sudo rm /etc/systemd/system/fan-control.service
 sudo systemctl daemon-reload
 ``` 
 
+## Check Installation
+
+See the syslog if there is any output vial `tail -f /var/log/syslog`. fan-control logs the temperature each minute.
+
+```
+2023-11-15T15:53:13.258610+01:00 pi-k8s-04 systemd[1]: Reloading requested from client PID 313775 (unit session-3.scope)...
+2023-11-15T15:53:13.258969+01:00 pi-k8s-04 systemd[1]: Reloading...
+2023-11-15T15:53:17.736482+01:00 pi-k8s-04 systemd[1]: Reloading finished in 4473 ms.
+2023-11-15T15:53:17.949732+01:00 pi-k8s-04 systemd[1]: Started fan-control.service - Raspberry PI Fan Control Service.
+2023-11-15T15:53:18.235422+01:00 pi-k8s-01 fan-control.py: Turning on fan, temp is 43°c.
+2023-11-15T15:53:18.236500+01:00 pi-k8s-04 fan-control.py: Current Temperature is 38°C.
+```  
