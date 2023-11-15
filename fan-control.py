@@ -22,7 +22,10 @@ try:
         elif fan.value > 0.0 and cpuTemp <= 35:
             syslog.syslog(syslog.LOG_INFO, f"Turning off fan, temp is {cpuTemp}°c.")
             fan.value = 0.0
-        sleep(5)
+        if counter % 0:
+            syslog.syslog(syslog.LOG_INFO, f"Current Temperature is {cpuTemp}°C.")
+        sleep(10)
+        counter += 1
 except:
     syslog.syslog(syslog.LOG_ALERT, 'Resetting fan speed to run fully...')
     fan.value = 1
