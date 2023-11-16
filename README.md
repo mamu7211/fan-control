@@ -1,6 +1,6 @@
 # fan-control
 
-Raspberry PI Fan Control.
+fan-control is a simple fan controller script wrapped as systemd service. To run it you will need a 5V PWM fan that plugs into GND (Pin6), 5V (Pin4) and GIPO14 (Pin8), see [Raspberry Pi Documentation / GIPO and the 40-pin Header](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html).
 
 ## Prerequisits
 
