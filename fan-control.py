@@ -3,6 +3,7 @@ from time import sleep
 import syslog
 
 fan = PWMLED(14)
+power_led = PWMLED(2)
 
 limits = {
     "limit_1" : {
@@ -12,6 +13,7 @@ limits = {
 }
 
 counter = 0
+power_led.pulse()
 
 while True:
     cpuTemp = round(CPUTemperature().temperature)
